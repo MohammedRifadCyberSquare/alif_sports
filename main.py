@@ -830,11 +830,11 @@ def finalise_result(selected_records):
                     House.house_name == house
                 ).first()
                 if row.position.lower() == "first":
-                    student.points += 3
+                    student.points += 5
                     house_record.total_points += 5
 
                 elif row.position.lower() == "second":
-                    student.points += 2
+                    student.points += 3
                     house_record.total_points += 3
 
                 elif row.position.lower() == "third":
