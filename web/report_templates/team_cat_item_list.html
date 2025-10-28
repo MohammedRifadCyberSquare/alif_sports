@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Team List -   {{ Team }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 80px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: flex-start;
+            gap: 30px;
+            margin-top: 10px;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        .table-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #666;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-left">
+            <img src="{{logo_path}}" alt="Logo" class="logo" style="width: 300px;">
+        </div>
+    </div>
+
+    
+
+    <div class="info">
+        <h1>Team List - {{team}}</h1>
+        <p><strong>Category:</strong> {{ category }}</p>
+        <p><strong>Item:</strong> {{ item }}</p>
+
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Chest No</th>
+                    <th>Admission No</th>
+                    <th>Student Name</th>
+                    <th>DOB</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in students %}
+                <tr>
+                    <td>{{ p.chest_no }}</td>
+                    <td>{{p.admission_no}}</td>
+                    <td>{{ p.student_name | upper }}</td>
+                    <td>{{ p.dob }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

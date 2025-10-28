@@ -1,0 +1,530 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Alif Sports</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../template/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/template/assets/css/noscript.css" />
+	</noscript>
+	<script type="text/javascript" src="/eel.js"></script>
+
+	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+	<style>
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		/* Remove min-height for all */
+		section.wrapper {
+			min-height: auto;
+		}
+
+		/* Make text inputs look like number inputs */
+		input[type="text"].form-control {
+			border: 1px solid #ced4da;
+			/* matches Bootstrap number input border */
+			border-radius: 0.25rem;
+			background-color: #fff;
+			box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+			height: calc(1.5em + 0.75rem + 2px);
+			/* same as number input */
+		}
+
+		/* Pagination Styling - Gold Theme */
+		#pagination {
+			margin-top: 10px;
+			/* reduce space above */
+			margin-bottom: 0;
+		}
+
+		.pagination {
+			background-color: #1d107d;
+			border-radius: 40px;
+			height: 50px;
+			padding: 4px 2px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+		}
+
+		.pagination .page-item {
+			margin: 0 5px;
+		}
+
+		.pagination .page-link {
+			color: gold;
+			font-weight: 600;
+			border: 1px solid rgba(255, 215, 0, 0.4);
+			border-radius: 25px;
+			height: 40px;
+			background-color: #222;
+			padding: 3px 5px;
+			font-size: 0.85rem;
+			transition: all 0.3s ease;
+			box-shadow: 0 0 6px rgba(255, 215, 0, 0.2);
+		}
+
+		.pagination .page-link:hover {
+			background-color: gold;
+			color: #1b1b1b;
+			transform: translateY(-2px);
+			box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+		}
+
+
+
+		/* Apply full screen height only for intro section */
+		section#intro {
+			min-height: 100vh;
+		}
+
+		#wrapper {
+			min-height: 100%;
+		}
+
+		section.wrapper {
+			min-height: 100vh;
+			/* Make each section full viewport height */
+		}
+
+		table td,
+		table th {
+			text-align: center;
+			/* horizontal center */
+			vertical-align: middle;
+			/* vertical center */
+		}
+
+		input[type="checkbox"] {
+			appearance: auto !important;
+			-webkit-appearance: checkbox !important;
+			-moz-appearance: checkbox !important;
+			display: inline-block !important;
+			width: 18px;
+			height: 18px;
+			accent-color: #007bff;
+			/* blue tick */
+			margin-right: 6px;
+			cursor: pointer;
+		}
+
+		/* Optional: make it easier to see */
+		input[type="checkbox"]:focus {
+			outline: 2px solid gold;
+		}
+
+		/* Pagination Styling */
+		/* Pagination Styling */
+
+
+
+		input[type="text"].form-control:focus,
+		input[type="number"].form-control:focus {
+			border-color: #86b7fe;
+			outline: 0;
+			box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, .25);
+		}
+	</style>
+</head>
+
+<body class="is-preload no-scrollspy">
+
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<div class="inner">
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="registration.html">Registration</a></li>
+					<li><a href="team_list.html">Team List</a></li>
+					<li><a href="event_registration.html">Event Registration</a></li>
+					<li><a href="event_list.html">Event List</a></li>
+
+					<li><a href="participant_reg.html">Participant Registration</a></li>
+					<li><a href="mark_entry.html">Result Entry</a></li>
+					<li><a href="finalize_entry.html">Finalize Result Entry(Ind)</a></li>
+					<li><a href="finalize_entry_grp.html">Finalize Result Entry(Grp)</a></li>
+					<li><a href="team_result_details.html">Team Result Details</a></li>
+					<li><a href="result.html">Result</a></li>
+					<li><a href="team_points.html">Team Points</a></li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+
+	<div id="wrapper">
+
+
+		<section id="add_items" class="wrapper style1 fade-up">
+			<div class="inner">
+				<h2 style="color:gold" class="mb-4">Participant Registration</h2>
+
+
+				<div class=" style1">
+					<section class="my-4">
+						<form method="post" action="#">
+							<div class="fields">
+
+
+
+
+								<div class="field half ">
+									<label for="name">Select Team</label>
+									<select name="team" class="my-1" id="team">
+										<option disabled selected value="">Select Team-</option>
+										<option value="alpha">ALPHA</option>
+										<option value="beta">BETA</option>
+										<option value="gamma">GAMMA</option>
+										<option value="delta">DELTA</option>
+									</select>
+								</div>
+								<div class="field half">
+									<label for="email">Category</label>
+									<select name="category" class="my-1" id="category">
+										<option value="">Select Items-</option>
+									</select>
+								</div>
+
+
+
+
+								<div class="field half ">
+									<label for="email">Admission No</label>
+									<input type="text" placeholder="enter admission no" name="" id="admissionNo">
+								</div>
+
+								<div class="field half ">
+									<label for="email">Student Name</label>
+									<input type="text" placeholder="enter student name" name="" id="studentName">
+								</div>
+
+								<div class="field half ">
+									<label for="email">Grade</label>
+									<select name="grade" class="my-1" id="grade">
+										<option value="" selected disabled>Select Grade-</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+
+									</select>
+								</div>
+
+								<div class="field half ">
+									<label for="email">Division</label>
+									<select name="grade" class="my-1" id="division">
+										<option value="" selected disabled>Select Division-</option>
+										<option value="f">F</option>
+										<option value="g">G</option>
+
+
+									</select>
+								</div>
+
+								<div class="field half ">
+									<label for="email">DOB</label>
+									<input type="date" style="height: 50px;" placeholder="enter dob" name="" id="dob">
+								</div>
+
+
+
+							</div>
+							<ul class="actions">
+								<li><button type="button" class="button submit bg-primary" id="registerStudent">Register
+									</button></li>
+							</ul>
+						</form>
+					</section>
+
+
+
+				</div>
+
+			</div>
+
+			<!-- Participants Section (Hidden Initially) -->
+			<div id="participantsSection" class="d-none m-2">
+				<div class="mb-3">
+					<div class="field half ">
+
+
+						<input type="text" placeholder="🔍 Search by Admission No..." class="w-25" name=""
+							id="searchInput">
+					</div>
+
+				</div>
+				<div class="text-end my-2">
+					<button type="button" id="btnRegister" class="button submit bg-danger">Register</button>
+				</div>
+				<div id="participantsList" class="border rounded p-3" style="min-height: 100px; ">
+					<div id="selectedNumbers" class="my-2 text-warning h5">Selected Chest Numbers: 0</div>
+
+					<table class="table table-hover table-danger" id="participantsTable">
+						<tr>
+							<th>Chest No</th>
+							<th>Student Name</th>
+							<th></th>
+						</tr>
+
+
+
+					</table>
+
+
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+	</div>
+
+	<!-- Footer -->
+
+	<div id="itemToast" class="alert  position-fixed top-0 end-0 m-3 d-none" role="alert"
+		style="z-index: 9999; width: 300px;">
+	</div>
+
+	<script>
+
+
+		document.getElementById("registerStudent").addEventListener("click", async function (e) {
+
+			let team = document.getElementById("team").value
+			let category = document.getElementById("category").value
+			let admissionNo = document.getElementById("admissionNo").value
+			let studentName = document.getElementById("studentName").value
+			let grade = document.getElementById("grade").value
+			let division = document.getElementById("division").value
+			let dob = document.getElementById("dob").value
+
+			const response = await eel.add_participant(team, category, admissionNo, studentName, grade, division, dob)()
+
+			if (response.statusCode == 201) {
+				const toast = document.getElementById("itemToast");
+				toast.classList.remove("d-none", "alert-danger");
+				toast.classList.add("alert-success");
+				toast.innerText = response.message;
+				setTimeout(() => {
+					toast.classList.add("d-none");
+				}, 3000);
+
+			}
+			else{
+				const toast = document.getElementById("itemToast");
+				toast.classList.remove("d-none", "alert-danger");
+				toast.classList.add("alert-danger");
+				toast.innerText = response.message;
+				setTimeout(() => {
+					toast.classList.add("d-none");
+				}, 3000);
+			}
+
+
+
+
+
+
+		})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		var selectedCount = 0;
+		var selected = [];
+		var selectedAdmissionNo = []
+
+
+
+
+
+
+		function updateSelectedNumbers() {
+			// ✅ Reset arrays before rebuilding
+			selected = [];
+			selectedAdmissionNo = [];
+
+			const table = document.getElementById("participantsTable");
+			const rows = table.getElementsByTagName("tr");
+
+			for (let i = 1; i < rows.length; i++) { // skip header
+				const checkbox = rows[i].querySelector("input[type='checkbox']");
+				if (checkbox && checkbox.checked) {
+					const chestNo = rows[i].getElementsByTagName("td")[0].textContent.trim();
+					const admissionInput = rows[i].getElementsByTagName("td")[2].querySelector("input");
+					const admissionNo = admissionInput.value.trim();
+
+					selected.push(chestNo);
+					selectedAdmissionNo.push(admissionNo);
+				}
+			}
+
+			document.getElementById("selectedNumbers").textContent =
+				"Selected Chest Numbers: " + (selected.length ? selected.join(", ") : "None");
+		}
+
+
+		// Add event listener to table for dynamic updating
+		document.getElementById("participantsTable").addEventListener("change", async function (e) {
+			if (e.target && e.target.type === "checkbox") {
+
+				const row = e.target.closest("tr");
+				const admissionInput = row.querySelector("td:nth-child(3) input");
+				const admissionNo = admissionInput.value;
+				const type = document.getElementById("type").value;
+				const response = await eel.check_student_item_count(admissionNo, type)();
+
+				if (response.statusCode === 409) {
+					alert(response.message);
+					e.target.checked = false; // uncheck the box if limit exceeded
+				}
+				updateSelectedNumbers();
+			}
+		});
+
+
+		 
+
+
+
+		const searchInput = document.getElementById("searchInput");
+
+		searchInput.addEventListener("input", function () {
+			let participantsTable = document.getElementById("participantsTable")
+			const filter = this.value.toUpperCase(); // case-insensitive
+			const rows = participantsTable.getElementsByTagName("tr");
+			// alert(rows[1])
+			for (let i = 1; i < rows.length; i++) {
+
+				const tdName = rows[i].getElementsByTagName("td")[0];
+				const tdChest = rows[i].getElementsByTagName("td")[1];
+				if (tdChest || tdName) {
+					const chestText = tdChest.textContent || tdChest.innerText;
+					const nameText = tdName.textContent || tdName.innerText;
+					if (chestText.toUpperCase().indexOf(filter) > -1 || nameText.toUpperCase().indexOf(filter) > -1) {
+						rows[i].style.display = "";
+					} else {
+						rows[i].style.display = "none";
+					}
+				}
+
+			}
+		}
+
+
+
+		)
+
+		// Populate categories on page load
+		async function loadCategories() {
+			const categories = await eel.get_categories()();
+			const categoryDropdown = document.getElementById("category");
+			categories.forEach(cat => {
+				const option = document.createElement("option");
+				option.value = cat;
+				option.text = cat;
+				categoryDropdown.appendChild(option);
+			});
+		}
+
+		// Update items when category changes
+		document.getElementById("category").addEventListener("change", async function () {
+			const category = this.value;
+			const items = await eel.get_items(category)();
+			const itemDropdown = document.getElementById("items");
+
+			// Clear previous items
+			itemDropdown.innerHTML = '<option value="">Select Item</option>';
+			console.log("Fetched items:", items);
+			// Add new items
+			items.forEach(it => {
+				const option = document.createElement("option");
+				option.value = it;
+				option.text = it;
+				itemDropdown.appendChild(option);
+			});
+		});
+
+
+
+		document.getElementById("btnRegister").addEventListener("click", async function () {
+
+			var category = document.getElementById("category").value
+			var team = document.getElementById("team").value
+			var item = document.getElementById("items").value
+			var type = document.getElementById("type").value
+
+			response = await eel.register_students(category, item, type, selectedAdmissionNo)()
+			if (response.statusCode == 200) {
+				const toast = document.getElementById("itemToast");
+				toast.classList.remove("d-none", "alert-danger");
+				toast.classList.add("alert-success");
+				toast.innerText = "Result successfully!";
+				setTimeout(() => {
+					toast.classList.add("d-none");
+				}, 3000);
+			}
+
+		})
+
+
+
+
+
+
+
+
+
+
+
+
+		window.onload = loadCategories;
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+
+	<!-- Scripts -->
+	<script src="/template/assets/js/jquery.min.js"></script>
+	<script src="/template/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/template/assets/js/jquery.scrolly.min.js"></script>
+	<script src="/template/assets/js/browser.min.js"></script>
+	<script src="/template/assets/js/breakpoints.min.js"></script>
+	<script src="/template/assets/js/util.js"></script>
+	<script src="/template/assets/js/main.js"></script>
+
+</body>
+
+</html>

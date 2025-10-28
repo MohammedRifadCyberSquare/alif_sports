@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Madrasa Fest</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../template/assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="/template/assets/css/noscript.css" />
+    </noscript>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <style>
+        .items-box {
+            border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 8px;
+            width: 220px;
+            background-color: #fff;
+        }
+
+        .items-box label {
+            color: black;
+            display: block;
+            margin-bottom: 4px;
+            cursor: pointer;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrapper {
+            min-height: 100%;
+        }
+
+        section.wrapper {
+            min-height: 100vh;
+            /* Make each section full viewport height */
+        }
+
+        #selectedItemsBox {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 8px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            /* stack input and tags */
+            gap: 4px;
+        }
+
+        #itemInput {
+            font-size: 14px;
+            padding: 4px 6px;
+            height: 28px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            width: 100%;
+        }
+
+        .tag {
+            background-color: #007bff;
+            color: white;
+            border-radius: 20px;
+            padding: 2px 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 13px;
+        }
+
+        .tag button {
+            border: none;
+            background: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+            height: 20px;
+            margin-top: 1px;
+        }
+    </style>
+</head>
+
+<body class="is-preload no-scrollspy">
+
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                   <li><a href="index.html">Home</a></li>
+					<li><a href="registration.html">Registration</a></li>
+					<li><a href="team_list.html">Team List</a></li>
+					<li><a href="event_registration.html">Event Registration</a></li>
+					<li><a href="event_list.html">Event List</a></li>
+
+					<li><a href="participant_reg.html">Participant Registration</a></li>
+					<li><a href="mark_entry.html">Result Entry</a></li>
+					<li><a href="finalize_entry.html">Finalize Result Entry(Ind)</a></li>
+					<li><a href="finalize_entry_grp.html">Finalize Result Entry(Grp)</a></li>
+					<li><a href="team_result_details.html">Team Result Details</a></li>
+					<li><a href="result.html">Result</a></li>
+					<li><a href="team_points.html">Team Points</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <div id="wrapper">
+
+
+        <section id="add_items" class="wrapper style1 fade-up">
+            <div class="inner">
+
+                <h2 style="color:gold" class="mb-4">Add Participants</h2>
+
+                <p> </p>
+                <div class=" style1">
+                    <section>
+                        <form>
+                            <div class="fields">
+
+                                <div class="field half">
+                                    <label for="name">Madrasa Name</label>
+                                    <select name="category" class="my-1" id="madrasa_name">
+                                        <option value="" selected disabled>Select Madrasa-</option>
+                                        <option value="AZEEZIYA">AZEEZIYA</option>
+                                        <option value="GURABI">GURABI</option>
+                                        <option value="MALAZ">MALAZ</option>
+                                        <option value="OLD SANAYYA">OLD SANAYYA</option>
+                                        <option value="ONLINE">ONLINE</option>
+                                        <option value="RAUDHA">RAUDHA</option>
+                                        <option value="UMMUL HAMAM">UMMUL HAMAM</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="field half">
+                                    <label for="name">Class</label>
+                                    <select name="category" class="my-1" id="cls_madrasa">
+                                        <option value="" selected disabled>Select Class-</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+
+
+
+                                    </select>
+                                </div>
+
+                                <div class="field half">
+                                    <label for="text">Student Name</label>
+                                    <input type="text" name="student_name" id="student_name" />
+                                </div>
+
+
+                                <div class="field half">
+                                    <label for="name">Category</label>
+                                    <select name="category" class="my-1" id="category">
+                                        <option value="" selected disabled>Select Category-</option>
+                                    </select>
+                                </div>
+
+
+
+                                <div class="field half">
+                                    <label for="email">Item</label>
+                                    <div class="form-control" id="selectedItemsBox">
+
+                                        <input type="text" id="itemInput" list="itemsList"
+                                            placeholder="Type or select..." class="border-0 w-100 mb-2" />
+                                        <datalist id="itemsList">
+
+                                        </datalist>
+
+
+                                    </div>
+                                    <div id="tagsContainer" class="tags-container mt-2"></div>
+
+
+
+
+                                </div>
+
+                                <div class="field half">
+                                    <label for="text">Select House</label>
+
+                                    <select name="house" class="my-1" id="house">
+                                        <option value="">Select House-</option>
+                                        <option value="Blue">Blue</option>
+                                        <option value="red">Red</option>
+                                        <option value="yellow">Yellow</option>
+                                        <option value="green">Green</option>
+
+
+
+                                    </select>
+                                </div>
+
+                                <div class="field half">
+                                    <label for="text">Gender</label>
+                                    <select name="gender" class="my-1" id="gender">
+                                        <option value="" disabled selected>Select Gender-</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="field half">
+                                    <label for="text">Father Name</label>
+                                    <input type="text" name="father_name" id="father_name" />
+                                </div>
+
+
+                                <div class="field half">
+                                    <label for="text">DOB</label>
+                                    <input type="date" style="height: 45px;" name="dob" id="dob" />
+                                </div>
+
+
+                                <div class="field half">
+                                    <label for="text">Phone No</label>
+                                    <input type="text" name="phone_no" id="phone_no" />
+                                </div>
+                            </div>
+                            <ul class="actions">
+                                <li><button type="button" class="button bg-primary submit"
+                                        id="registerBtn">Register</button></li>
+                            </ul>
+                        </form>
+                    </section>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper style1-alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <div id="itemToast" class="alert d-none" role="alert" style="
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        width: 300px;
+        text-align: center;
+    ">
+    </div>
+
+    <script type="text/javascript" src="/eel.js"></script>
+
+
+    <script>
+        const alertBox = document.getElementById('itemToast');
+        const categorySelect = document.getElementById("category");
+        const itemsSelect = document.getElementById("items");
+        var itemsList = document.getElementById("itemsList");
+        var SelectedItems = [];
+        window.addEventListener("DOMContentLoaded", async () => {
+            const categories = await eel.get_categories()();
+            console.log("Categories:", categories);
+            categories.forEach(cat => {
+                const option = document.createElement("option");
+                option.value = cat;
+                option.text = cat.charAt(0).toUpperCase() + cat.slice(1);
+                categorySelect.appendChild(option);
+            });
+        });
+
+        // Update items when category changes
+        categorySelect.addEventListener("change", async () => {
+            const category = categorySelect.value;
+
+            // Fetch items for selected category
+            const items = await eel.get_items(category)();
+
+            // Clear previous options
+            itemsList.innerHTML = '<option value="" disabled selected>Select Item</option>';
+
+            // Add new options
+            items.forEach(item => {
+                const option = document.createElement("option");
+                option.value = item.charAt(0).toUpperCase() + item.slice(1);;
+                // option.text = item.charAt(0).toUpperCase() + item.slice(1);
+                itemsList.appendChild(option);
+            });
+        });
+
+
+
+        const input = document.getElementById("itemInput");
+        const box = document.getElementById("selectedItemsBox");
+
+        const tagsContainer = document.getElementById("tagsContainer");
+
+
+        input.addEventListener("change", () => {
+            const value = input.value.trim();
+            if (value) {
+
+                // SelectedItems.push(value);
+
+                const existingTags = Array.from(tagsContainer.children).map(tag => tag.textContent.slice(0, -1).trim());
+                if (existingTags.includes(value)) {
+
+                    input.value = "";
+                    return;
+                }
+
+                console.log('Selected Items before adding new:', existingTags);
+                const tag = document.createElement("div");
+                tag.classList.add("tag");
+
+                SelectedItems.push(value);
+                console.log('Creating tag for value:', value);
+
+                tag.innerHTML = `${value} <button onclick="this.parentElement.remove()">×</button>`;
+
+                // Add tag to tags container
+                tagsContainer.appendChild(tag);
+
+                // Clear input
+                input.value = "";
+
+                console.log(SelectedItems, '______________------');
+            }
+        });
+
+
+        document.getElementById("registerBtn").addEventListener("click", async () => {
+            const madrasaName = document.getElementById("madrasa_name").value;
+            const clsMadrasa = document.getElementById("cls_madrasa").value;
+            const studentName = document.getElementById("student_name").value;
+            const category = document.getElementById("category").value;
+            const house = document.getElementById("house").value;
+            const gender = document.getElementById("gender").value;
+            const fatherName = document.getElementById("father_name").value;
+            const dob = document.getElementById("dob").value;
+            const phoneNo = document.getElementById("phone_no").value;
+
+            response = await eel.register_participant(madrasaName, clsMadrasa, studentName, category, SelectedItems,
+                house, gender, fatherName, dob, phoneNo)();
+
+            if (response.statusCode == 201) {
+                alertBox.classList.remove('d-none');  // remove d-none to make it visible // remove previous alert classes
+                alertBox.classList.add('alert-primary');
+                alertBox.innerText = response.message;
+                document.getElementById("madrasa_name").value = "";
+                document.getElementById("cls_madrasa").value = "";
+                document.getElementById("student_name").value = "";
+                document.getElementById("category").value = "";
+                document.getElementById("house").value = "";
+                document.getElementById("gender").value = "";
+                document.getElementById("father_name").value = "";
+                document.getElementById("dob").value = "";
+                document.getElementById("phone_no").value = "";
+
+                // Clear selected items
+                SelectedItems = [];
+                tagsContainer.innerHTML = "";  // remove all tags
+                itemInput.value = "";
+
+
+                setTimeout(() => {
+                    alertBox.classList.add('d-none');
+
+                }, 2000);
+            } else {
+                alert('Failed to register participant: ' + response.message);
+            }
+
+
+
+        })
+
+    </script>
+
+    <!-- Scripts -->
+    <script src="/template/assets/js/jquery.min.js"></script>
+    <script src="/template/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/template/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/template/assets/js/browser.min.js"></script>
+    <script src="/template/assets/js/breakpoints.min.js"></script>
+    <script src="/template/assets/js/util.js"></script>
+    <script src="/template/assets/js/main.js"></script>
+
+</body>
+
+</html>

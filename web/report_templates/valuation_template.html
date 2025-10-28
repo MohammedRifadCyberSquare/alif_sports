@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Valuation - {{ category }} - {{ item }}</title>
+    <style>
+        /* Reset and base styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 80px;
+        }
+
+        .info {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        /* Table container */
+        .table-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            page-break-inside: auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #666;
+            padding: 4px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            padding: 4px;
+            /* slightly more padding */
+            font-size: 18px;
+            /* set the size you want */
+            height: auto;
+            /* let height adjust automatically */
+            line-height: normal;
+            /* don't constrain line height */
+        }
+
+        .td-code {
+            width: 60px;
+            height: 60px;
+        }
+
+        .td-sign {
+            width: 130px;
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            font-size: 14px;
+            margin-top: 20px;
+            display: table;
+            table-layout: fixed;
+        }
+
+        .footer-left {
+            text-align: left;
+            width: 50%;
+            display: table-cell;
+        }
+
+        .footer-center {
+            text-align: center;
+            display: table-cell;
+        }
+
+        /* Empty row for spacing */
+        .spacer td {
+            height: 40px;
+            background-color: #fff;
+        }
+
+        th.participant {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo -->
+    <div class="header">
+        <img src="{{logo_path}}" alt="Logo" class="logo">
+        <h4>Madrasa Fest 2025</h4>
+    </div>
+
+    <!-- Info -->
+    <div class="info" style="display: flex; align-items: end;">
+        <h1>Valuation Sheet</h1>
+        <p><strong>Category:</strong> {{ category|title }}</p>
+        <p><strong>Item:</strong> {{ item|title }}</p>
+
+
+    </div>
+    <div style="display: flex; align-items: end; justify-content: end;">
+        <p><strong>Stage:</strong></p>
+    </div>
+
+    <!-- Table -->
+    <div class="table-container" style="margin-bottom: 20px;">
+        <table >
+            <thead>
+                <tr>
+                    <th>Code Letter</th>
+                    <th colspan="5">Marks</th>
+                     
+                    <th class="participant" style="width: 200px;">Marks <br/>out of 100</th>
+                </tr>
+            </thead>
+            <tbody>
+             {% for p in participants %}
+                <tr>
+                    <td class="td-code" style="height: 30px;"></td>
+                    <td class="td-code"></td>
+                     <td class="td-code"></td>
+                    <td class="td-code"></td> 
+                    <td class="td-code"></td>
+                    <td class="td-code"></td>
+                    <td class="td-code"></td>
+
+                </tr>
+                {% endfor %} 
+
+
+
+            </tbody>
+        </table>
+
+        <table>
+            {% for i in range(10 - participants|length if participants|length < 5 else 0) %} <tr class="spacer">
+                <tr>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                </tr>
+                <tr>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+
+                </tr>
+                {% endfor %}
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-left">
+            <p>Judge's Name and Signature _____________</p>
+             <br>
+             <p>
+                Judging Comments: 
+                </p>
+        </div>
+
+        
+    </div>
+
+</body>
+
+</html>

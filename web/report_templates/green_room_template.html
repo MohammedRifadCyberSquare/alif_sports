@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Green Room Sign - {{ category }} - {{ item }}</title>
+    <style>
+        /* Reset and base styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 80px;
+        }
+
+        .info {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        h1 {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        /* Table container */
+        .table-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            page-break-inside: auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #666;
+            padding: 4px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            padding: 4px;
+            /* slightly more padding */
+            font-size: 18px;
+            /* set the size you want */
+            height: auto;
+            /* let height adjust automatically */
+            line-height: normal;
+            /* don't constrain line height */
+        }
+
+        .td-code {
+            width: 60px;
+        }
+
+        .td-sign {
+            width: 130px;
+        }
+
+        /* Footer */
+        .footer {
+            width: 100%;
+            font-size: 14px;
+            margin-top: 20px;
+            display: table;
+            table-layout: fixed;
+        }
+
+        .footer-left {
+            text-align: left;
+            width: 50%;
+            display: table-cell;
+        }
+
+        .footer-center {
+            text-align: center;
+            display: table-cell;
+        }
+
+        /* Empty row for spacing */
+        .spacer td {
+            height: 40px;
+            background-color: #fff;
+        }
+
+        th.participant {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo -->
+    <div class="header">
+        <img src="{{logo_path}}" alt="Logo" class="logo">
+        <h4>Madrasa Fest 2025</h4>
+    </div>
+
+    <!-- Info -->
+    <div class="info">
+        <h1>Green Room Sign Sheet</h1>
+        <p><strong>Category:</strong> {{ category }}</p>
+        <p><strong>Item:</strong> {{ item }}</p>
+    </div>
+
+    <!-- Table -->
+    <div class="table-container" style="margin-bottom: 20px;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Chest No</th>
+                    <th>Participant Name</th>
+                    <th class="participant">Code Letter</th>
+                    <th class="participant">Participant Signature</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in participants %}
+                <tr>
+                    <td>{{ p.chest_no }}</td>
+                    <td>{{ p.student_name | upper }}</td>
+                    <td class="td-code"></td>
+                    <td class="td-sign"></td>
+                </tr>
+                {% endfor %}
+
+
+
+            </tbody>
+        </table>
+
+        <table>
+            {% for i in range(10 - participants|length if participants|length < 5 else 0) %} <tr class="spacer">
+                <tr>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                </tr>
+                <tr>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+                    <td class="td-sign" style="border: 0px;"></td>
+
+                </tr>
+                {% endfor %}
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-left">
+            <p>Competition Start Time: _____________</p>
+            <p>Competition End Time: ______________</p>
+        </div>
+
+        <div class="footer-center">
+            <p>Stage Incharge Name & Signature: ______________</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

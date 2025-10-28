@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Madrasa Fest</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../template/assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="/template/assets/css/noscript.css" />
+    </noscript>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/eel.js"></script>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrapper {
+            min-height: 100%;
+        }
+
+        .pdf-container {
+            width: 80%;
+            max-width: 1000px;
+        }
+
+        iframe {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        section.wrapper {
+            min-height: 100vh;
+            /* Make each section full viewport height */
+        }
+
+        .result-container {
+            display: flex;
+            flex-direction: column;
+            /* stack rows vertically */
+            gap: 10px;
+            /* space between rows */
+            max-width: 400px;
+            /* optional width */
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            /* label on left, button on right */
+            align-items: center;
+        }
+
+        .result-row button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body class="is-preload no-scrollspy">
+
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+					<li><a href="registration.html">Registration</a></li>
+					<li><a href="team_list.html">Team List</a></li>
+					<li><a href="event_registration.html">Event Registration</a></li>
+					<li><a href="event_list.html">Event List</a></li>
+
+					<li><a href="participant_reg.html">Participant Registration</a></li>
+					<li><a href="mark_entry.html">Result Entry</a></li>
+					<li><a href="finalize_entry.html">Finalize Result Entry(Ind)</a></li>
+					<li><a href="finalize_entry_grp.html">Finalize Result Entry(Grp)</a></li>
+					<li><a href="team_result_details.html">Team Result Details</a></li>
+					<li><a href="result.html">Result</a></li>
+					<li><a href="team_points.html">Team Points</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <div id="wrapper">
+
+
+        <section id="add_items" class="wrapper style1 fade-up">
+            <div class="inner">
+                <h1 style="color: gold;" class="mb-4">Result</h1>
+
+                <div class="split style1">
+                    <section>
+
+                        <div class="fields">
+
+                            <div class="field half">
+                                <label for="name">Type</label>
+                                <select name="type" class="my-1" id="type">
+                                    <option value="">Select Type-</option>
+                                    <option value="individual">Individual</option>
+                                    <option value="group">Group</option>
+
+
+                                </select>
+                            </div>
+                            <div class="field half">
+                                <label for="name">Category</label>
+                                <select name="category" class="my-1" id="category">
+                                    <option value="">Select Category-</option>
+
+
+                                </select>
+                            </div>
+                            <div class="field half">
+                                <label for="email">Item</label>
+                                <select name="category" class="my-1" id="items">
+                                    <option value="">Select Items-</option>
+
+
+
+
+                                </select>
+                            </div>
+
+
+
+
+
+
+
+
+                        </div>
+                        <ul class="actions mt-3">
+                            <li><button type="button" id="review" class="button submit  bg-success">Review</a></li>
+
+
+                        </ul>
+
+                    </section>
+                    <section>
+                        <div class="result-container">
+                            <div class="result-row">
+                                <span class="text-white fw-bold">Highest Score:</span>
+                                <button class="mx-1  button bg-primary " type="button" id="getHighest">View</button>
+                            </div>
+
+
+
+
+                            <hr>
+
+
+                            <hr>
+
+                        </div>
+
+                    </section>
+
+                </div>
+            </div>
+
+    </div>
+    </section>
+
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper style1-alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+ <div id="itemToast" class="alert  position-fixed top-0 end-0 m-3 d-none" role="alert"
+        style="z-index: 9999; width: 300px;">
+    </div>
+    <!-- Scripts -->
+    <script src="/template/assets/js/jquery.min.js"></script>
+    <script src="/template/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/template/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/template/assets/js/browser.min.js"></script>
+    <script src="/template/assets/js/breakpoints.min.js"></script>
+    <script src="/template/assets/js/util.js"></script>
+    <script src="/template/assets/js/main.js"></script>
+
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('review');
+            btn.addEventListener('click', async function (e) {
+                e.preventDefault();
+
+                // Get selected category/item
+                let category = document.getElementById('category').value;
+                let itemSelect = document.getElementById('items');
+                let item = itemSelect ? itemSelect.value : 'default';
+                let type = document.getElementById("type").value
+
+
+                try {
+                    // Call Python backend via Eel
+                    console.log(type)
+                    let response = await eel.get_result_by_category_and_item(type,category, item)();
+                    console.log(response.pdfPath)
+                    // Set window size
+                    let w = 1000;
+                    let h = 650;
+
+                    // Calculate top-left coordinates to center the window
+                    let left = (window.screen.width / 2) - (w / 2);
+                    let top = (window.screen.height / 2) - (h / 2);
+
+                    
+                    window.open(
+                        `pdf_window.html?file=${encodeURIComponent(response.pdfPath)}`,
+                        '_blank',
+                        `width=${w},height=${h},top=${top},left=${left},resizable=yes,scrollbars=yes`
+                    );
+
+                } catch (err) {
+                    console.error(err);
+                    alert('Error calling Python backend. Make sure you run via Eel.');
+                }
+            });
+        });
+
+
+
+        async function loadCategories() {
+			const categories = await eel.get_categories()();
+			const categoryDropdown = document.getElementById("category");
+			categories.forEach(cat => {
+				const option = document.createElement("option");
+				option.value = cat;
+				option.text = cat;
+				categoryDropdown.appendChild(option);
+			});
+		}
+
+
+
+        document.getElementById("category").addEventListener("change", async function () {
+			const category = this.value;
+			const items = await eel.get_items(category)();
+			const itemDropdown = document.getElementById("items");
+
+			// Clear previous items
+			itemDropdown.innerHTML = '<option value="">Select Item</option>';
+			console.log("Fetched items:", items);
+			// Add new items
+			items.forEach(it => {
+				const option = document.createElement("option");
+				option.value = it;
+				option.text = it;
+				itemDropdown.appendChild(option);
+			});
+		});
+
+
+
+
+
+         const btnGetList = document.getElementById("getHighest");
+
+            btnGetList.addEventListener('click', async function (e) {
+                e.preventDefault();
+                let w = 1000;
+                let h = 650;
+                
+                // Call the Python function via Eel
+                try {
+                    const response = await eel.highest_score_by_category()();
+                    console.log("Team List:", response.students);
+
+                    if (response.statusCode == 200) {
+                        let left = (window.screen.width / 2) - (w / 2);
+                        let top = (window.screen.height / 2) - (h / 2);
+                        // console.log(response.students)
+                        window.open(
+                            `pdf_window.html?file=${encodeURIComponent(response.pdfPath)}`,
+                            '_blank',
+                            `width=${w},height=${h},top=${top},left=${left},resizable=no,scrollbars=yes`
+                        );
+                    }
+                    // Show success toast
+                    const toast = document.getElementById("itemToast");
+                    toast.classList.remove("d-none", "alert-danger");
+                    toast.classList.add("alert-success");
+                    toast.innerText = "Team list fetched successfully!";
+                    setTimeout(() => {
+                        toast.classList.add("d-none");
+                    }, 3000);
+
+                } catch (error) {
+                    console.error("Error fetching team list:", error);
+
+                    // Show error toast
+                    const toast = document.getElementById("itemToast");
+                    toast.classList.remove("d-none", "alert-success");
+                    toast.classList.add("alert-danger");
+                    toast.innerText = "Error fetching team list.";
+                    setTimeout(() => {
+                        toast.classList.add("d-none");
+                    }, 3000);
+                }
+            });
+
+         
+
+
+
+		window.onload = loadCategories;
+    </script>
+
+
+</body>
+
+</html>

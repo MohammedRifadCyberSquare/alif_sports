@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF Viewer</title>
+  <link href="../web/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f9fafb;
+    }
+
+    .pdf-container {
+      width: 80%;
+      height: 90%;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+ 
+
+   <iframe class="pdf-container" id="pdfFrame" title="PDF Viewer"></iframe>
+
+  <script>
+    // Get PDF from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const pdfFile = urlParams.get('file');
+
+    const pdfFrame = document.getElementById('pdfFrame');
+    if(pdfFile) {
+      pdfFrame.src = pdfFile;  // should be relative path like "pdfs/..."
+    } else {
+      alert("No PDF file specified.");
+    }
+
+    // Delete PDF when window closes
+   window.addEventListener('beforeunload', () => {
+    if(pdfFile) {
+        // synchronous Eel call
+        eel.delete_pdf(pdfFile)(); 
+        // Note: no await, cannot guarantee async finishes, but works better
+    }
+});
+  </script>
+
+
+</body>
+</html>

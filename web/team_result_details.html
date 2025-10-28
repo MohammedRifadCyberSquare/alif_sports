@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Madrasa Fest</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../template/assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="/template/assets/css/noscript.css" />
+    </noscript>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/eel.js"></script>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrapper {
+            min-height: 100%;
+        }
+
+        .pdf-container {
+            width: 80%;
+            max-width: 1000px;
+        }
+
+        iframe {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        section.wrapper {
+            min-height: 100vh;
+            /* Make each section full viewport height */
+        }
+
+        .result-container {
+            display: flex;
+            flex-direction: column;
+            /* stack rows vertically */
+            gap: 10px;
+            /* space between rows */
+            max-width: 400px;
+            /* optional width */
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            /* label on left, button on right */
+            align-items: center;
+        }
+
+        .result-row button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body class="is-preload no-scrollspy">
+
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+					<li><a href="registration.html">Registration</a></li>
+					<li><a href="team_list.html">Team List</a></li>
+					<li><a href="event_registration.html">Event Registration</a></li>
+					<li><a href="event_list.html">Event List</a></li>
+
+					<li><a href="participant_reg.html">Participant Registration</a></li>
+					<li><a href="mark_entry.html">Result Entry</a></li>
+					<li><a href="finalize_entry.html">Finalize Result Entry(Ind)</a></li>
+					<li><a href="finalize_entry_grp.html">Finalize Result Entry(Grp)</a></li>
+					<li><a href="team_result_details.html">Team Result Details</a></li>
+					<li><a href="result.html">Result</a></li>
+					<li><a href="team_points.html">Team Points</a></li>
+            </nav>
+        </div>
+    </section>
+
+    <div id="wrapper">
+
+
+        <section id="add_items" class="wrapper style1 fade-up">
+            <div class="inner">
+                <h2 style="color:gold" class="mb-4">Result Details</h2>
+
+                <div class=" style1">
+                    <section>
+                        <form id="itemForm">
+                            <div class="fields half">
+                                <div class="field half ">
+                                    <label for="name">Select Team</label>
+                                    <select name="category" class="my-1" id="category">
+                                        <option disabled selected value="">Select Team-</option>
+                                        <option value="alpha">ALPHA</option>
+                                        <option value="beta">BETA</option>
+                                        <option value="gamma">GAMMA</option>
+                                        <option value="delta">DELTA</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                            <ul class="actions">
+                                <li><button type="button" id="btn" class="button submit bg-primary">Get Result</button>
+                                </li>
+                            </ul>
+                        </form>
+                    </section>
+
+                </div>
+            </div>
+
+            <section class="text-center">
+                <h4 style="color:rgb(252, 244, 199)" class="mb-4">Result Details</h2>
+
+            </section>
+            <section class="mx-5 d-flex" style="gap: 20px; align-items: center;">
+                <input type="radio" name="category" value="SubJunior" checked class="form-check-input bg-dark"
+                    style="width: 40px; height: 40px;" id="student_2001">
+                <span class="text-white me-5"> Sub Junior</span>
+
+                <input type="radio" name="category" value="Junior" class="form-check-input bg-dark"
+                    style="width: 40px; height: 40px;" id="student_2002">
+                <span class="text-white me-5"> Junior</span>
+
+                <input type="radio" name="category" value="Senior" class="form-check-input bg-dark"
+                    style="width: 40px; height: 40px;" id="student_2003">
+                <span class="text-white"> Senior</span>
+
+                <input type="radio" name="category" value="Comparison" class="form-check-input bg-dark"
+                    style="width: 40px; height: 40px;" id="student_2004">
+                <span class="text-white"> Comparison</span>
+            </section>
+
+            <section class="me-5">
+                <h5 class="text-end">
+                    Total Points Received: 250
+                </h5>
+            </section>
+            <section id="sectionSubJunior" class="my-5 mx-5">
+                <div class=" style1 ">
+                    <section class="my-5">
+
+                        <table class="table table-primary table-hover">
+                            <tr>
+                                <th>
+                                    Category
+                                </th>
+                                <th>
+                                    Item
+                                </th>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    First Position
+                                </th>
+                                <th>
+                                    Second Position
+                                </th>
+                                <th>
+                                    Third Position
+                                </th>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    Sub Junior
+                                </td>
+                                <td>
+                                    100M
+                                </td>
+                                <td>
+                                    Individual
+                                </td>
+                                <td>
+                                    Adnan (7865)
+                                </td>
+                                <td>
+                                    Faaz(8909)
+                                </td>
+                                <td>
+                                    Hamza(7654)
+                                </td>
+
+
+                            </tr>
+                        </table>
+
+                    </section>
+
+            </section>
+
+
+
+            <section id="sectionJunior" class="my-5 mx-5">
+                <div class=" style1 ">
+                    <section class="my-5">
+
+                        <table class="table table-primary table-hover">
+                            <tr>
+                                <th>
+                                    Category
+                                </th>
+                                <th>
+                                    Item
+                                </th>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    First Position
+                                </th>
+                                <th>
+                                    Second Position
+                                </th>
+                                <th>
+                                    Third Position
+                                </th>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    Junior
+                                </td>
+                                <td>
+                                    100M
+                                </td>
+                                <td>
+                                    Individual
+                                </td>
+                                <td>
+                                    Adnan (7865)
+                                </td>
+                                <td>
+                                    Faaz(8909)
+                                </td>
+                                <td>
+                                    Hamza(7654)
+                                </td>
+
+
+                            </tr>
+                        </table>
+
+                    </section>
+
+            </section>
+
+            <section id="sectionSenior" class="my-5 mx-5">
+                <div class=" style1 ">
+                    <section class="my-5">
+
+                        <table class="table table-primary table-hover">
+                            <tr>
+                                <th>
+                                    Category
+                                </th>
+                                <th>
+                                    Item
+                                </th>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    First Position
+                                </th>
+                                <th>
+                                    Second Position
+                                </th>
+                                <th>
+                                    Third Position
+                                </th>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    Senior
+                                </td>
+                                <td>
+                                    100M
+                                </td>
+                                <td>
+                                    Individual
+                                </td>
+                                <td>
+                                    Adnan (7865)
+                                </td>
+                                <td>
+                                    Faaz(8909)
+                                </td>
+                                <td>
+                                    Hamza(7654)
+                                </td>
+
+
+                            </tr>
+                        </table>
+
+                    </section>
+
+            </section>
+
+
+            <section id="sectionCompare" class="my-5 mx-5">
+                <div class=" style1 ">
+                    <section class="my-5">
+
+                        chart
+
+                    </section>
+
+            </section>
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper style1-alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/template/assets/js/jquery.min.js"></script>
+    <script src="/template/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/template/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/template/assets/js/browser.min.js"></script>
+    <script src="/template/assets/js/breakpoints.min.js"></script>
+    <script src="/template/assets/js/util.js"></script>
+    <script src="/template/assets/js/main.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const radios = document.querySelectorAll('input[name="category"]');
+            const sections = {
+                "SubJunior": document.getElementById('sectionSubJunior'),
+                "Junior": document.getElementById('sectionJunior'),
+                "Senior": document.getElementById('sectionSenior'),
+                "Comparison": document.getElementById('sectionCompare')
+            };
+
+            function hideAll() {
+                for (let key in sections) {
+                    if (sections[key]) sections[key].style.display = 'none';
+                }
+            }
+
+            radios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    hideAll();
+                    const selected = radio.value;
+                    if (sections[selected]) sections[selected].style.display = 'block';
+                });
+            });
+
+            // Initially hide all except the **first section**
+            hideAll();
+            // Show the first section (SubJunior)
+            if (sections["SubJunior"]) sections["SubJunior"].style.display = 'block';
+            // Also make sure its radio button is checked
+            const firstRadio = document.querySelector('input[name="category"][value="SubJunior"]');
+            if (firstRadio) firstRadio.checked = true;
+        });
+    </script>
+
+
+
+</body>
+
+</html>
